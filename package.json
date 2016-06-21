@@ -1,0 +1,29 @@
+{
+  "name": "zeroswag-the-playlist",
+  "version": "1.0.0",
+  "description": "An event playlist generator based on the taste of participants",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freegyes/zeroswag-the-playlist.git"
+  },
+  "keywords": [
+    "spotify",
+    "music"
+  ],
+  "author": "zeroswag",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freegyes/zeroswag-the-playlist/issues"
+  },
+  "homepage": "https://github.com/freegyes/zeroswag-the-playlist#readme",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

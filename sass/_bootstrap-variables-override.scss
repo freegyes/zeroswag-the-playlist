@@ -1,0 +1,12 @@
+// Bootstrap variable overrides (do not use !default here)
+
+$brand-primary:                   $primary-color;
+
+$gray-base:                       $secondary-text-color;
+
+$font-family-sans-serif:          "Noto Sans", Helvetica, Arial, sans-serif;
+$font-family-serif:               "Noto Serif", "Times New Roman", Times, serif;
+
+$text-color:                      $primary-color-text;
+
+$headings-font-family:            $font-family-serif;
