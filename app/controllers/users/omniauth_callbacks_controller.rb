@@ -1,7 +1,5 @@
 class Users::OmniauthCallbacksController < ApplicationController
   def spotify
-    spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-    puts spotify_user.top_tracks(time_range: 'short_term').inspect
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
