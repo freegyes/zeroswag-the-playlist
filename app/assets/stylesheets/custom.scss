@@ -9,10 +9,13 @@ $accent-color:         #FF4081;
 $primary-text-color:   #212121;
 $secondary-text-color: #727272;
 $divider-color:        #B6B6B6;
+$primary-background:   #FAFAFA;
 
 @import "bootstrap";
 @import "custom-variables";
 @import "custom-mixins";
+
+@import "events";
 
 /*******************************************************************************
                                Site-wide styles

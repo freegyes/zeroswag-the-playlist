@@ -1,6 +1,35 @@
 .container
   .row
-    .col-md-12
-      %h1= "#{current_user.name}'s Events"
-      %p Hello content.
-      = link_to 'Create Event', new_event_path, class: 'btn btn-accent', title: 'Create new event'
+    .col-md-7
+      %h1 Events
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title Your events
+        .panel-body
+          = link_to 'Create Event', new_event_path, class: 'btn btn-accent', title: 'Create new event'
+        .list-group
+          %a.list-group-item{:href => "#"} First event
+          %a.list-group-item{:href => "#"} Second event
+          %a.list-group-item{:href => "#"} Third event
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title Events you've contributed to
+        .panel-body
+        .list-group
+          %a.list-group-item{:href => "#"} First event
+          %a.list-group-item{:href => "#"} Second event
+          %a.list-group-item{:href => "#"} Third event
+    .col-md-5
+      .card.hovercard
+        .cardheader 
+          current_user.name
+        .avatar
+          %img{:alt => "profile picture", :src => "http://lorempixel.com/100/100/people/8/"}
+        .info
+          .title
+          .desc
+            %span.label.label-primary 42
+            events hosted
+          .desc
+            %span.label.label-primary 143
+            contributions
