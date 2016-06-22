@@ -1,0 +1,6 @@
+.container
+  .row
+    .col-md-12
+      %h1= "#{current_user.name}'s Events"
+      %p Hello content.
+      = link_to 'Create Event', new_event_path, class: 'btn btn-accent', title: 'Create new event'

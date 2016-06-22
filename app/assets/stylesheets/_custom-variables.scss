@@ -1,0 +1,81 @@
+/* Other custom variables */
+$navbar-height:60px;
+$footer-height:40px;
+$whitespace-base:20px;
+
+/* Other colors */
+$unstyledAColor: $gray-dark;
+$unstyledAColorHover: $gray-darker;
+
+/* Responsive typography */
+$breakpoints: (
+  sm :     $screen-xs-max,
+  md :     $screen-sm-max,
+  lg :     $screen-md-max
+);
+
+$font-size-null: 15px;
+$font-size-sm:   16px;
+$font-size-md:   17px;
+$font-size-lg:   19px;
+
+$line-height-null: 1.45;
+$line-height-sm:   1.50;
+$line-height-md:   1.55;
+$line-height-lg:   1.60;
+
+$multiplier-h1:   2.6;
+$multiplier-h2:   2.15;
+$multiplier-h3:   1.7;
+$multiplier-h4:   1.25;
+$multiplier-h5:   1;
+$multiplier-h6:   0.85;
+
+$p-font-sizes: (
+  null :    ($font-size-null, $line-height-null),
+  sm :      ($font-size-sm, $line-height-sm),
+  md :      ($font-size-md, $line-height-md),
+  lg :      ($font-size-lg, $line-height-lg),
+);
+
+$h1-font-sizes: (
+  null :    (ceil(($font-size-null * $multiplier-h1)), $line-height-null),
+  sm :      (ceil(($font-size-sm * $multiplier-h1)), $line-height-sm),
+  md :      (ceil(($font-size-md * $multiplier-h1)), $line-height-md),
+  lg :      (ceil(($font-size-lg * $multiplier-h1)), $line-height-lg),
+);
+
+$h2-font-sizes: (
+  null :    (ceil(($font-size-null * $multiplier-h2)), $line-height-null),
+  sm :      (ceil(($font-size-sm * $multiplier-h2)), $line-height-sm),
+  md :      (ceil(($font-size-md * $multiplier-h2)), $line-height-md),
+  lg :      (ceil(($font-size-lg * $multiplier-h2)), $line-height-lg),
+);
+
+$h3-font-sizes: (
+  null :    (ceil(($font-size-null * $multiplier-h3)), $line-height-null),
+  sm :      (ceil(($font-size-sm * $multiplier-h3)), $line-height-sm),
+  md :      (ceil(($font-size-md * $multiplier-h3)), $line-height-md),
+  lg :      (ceil(($font-size-lg * $multiplier-h3)), $line-height-lg),
+);
+
+$h4-font-sizes: (
+  null :    (ceil(($font-size-null * $multiplier-h4)), $line-height-null),
+  sm :      (ceil(($font-size-sm * $multiplier-h4)), $line-height-sm),
+  md :      (ceil(($font-size-md * $multiplier-h4)), $line-height-md),
+  lg :      (ceil(($font-size-lg * $multiplier-h4)), $line-height-lg),
+);
+
+$h5-font-sizes: (
+  null :    (ceil(($font-size-null * $multiplier-h5)), $line-height-null),
+  sm :      (ceil(($font-size-sm * $multiplier-h5)), $line-height-sm),
+  md :      (ceil(($font-size-md * $multiplier-h5)), $line-height-md),
+  lg :      (ceil(($font-size-lg * $multiplier-h5)), $line-height-lg),
+);
+
+$h6-font-sizes: (
+  null :    (ceil(($font-size-null * $multiplier-h6)), $line-height-null),
+  sm :      (ceil(($font-size-sm * $multiplier-h6)), $line-height-sm),
+  md :      (ceil(($font-size-md * $multiplier-h6)), $line-height-md),
+  lg :      (ceil(($font-size-lg * $multiplier-h6)), $line-height-lg),
+);

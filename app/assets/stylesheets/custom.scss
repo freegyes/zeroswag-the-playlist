@@ -1,0 +1,182 @@
+/* Imports */
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Noto+Sans&subset=latin);
+
+$primary-color-dark:   #0097A7;
+$primary-color:        #00BCD4;
+$primary-color-light:  #B2EBF2;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FF4081;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+
+@import "bootstrap";
+@import "custom-variables";
+@import "custom-mixins";
+
+/*******************************************************************************
+                               Site-wide styles
+*******************************************************************************/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0 0 $footer-height;
+}
+
+header {
+  position: absolute;
+  min-height: 7em;
+  height: 30%;
+  width: 100%;
+  background: $primary-color;
+  // background-image: url(zeroswag.png);
+  // background-repeat: no-repeat;
+  // background-position: 70% 175%;
+  z-index: -2;
+}
+
+footer {
+  position: absolute;
+  background: $primary-color-dark;
+  color: $primary-color-light;
+  left: 0;
+  bottom: 0;
+  height: 5%;
+  width: 100%;
+}
+
+footer p {
+  margin-bottom: 0px;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  height: $navbar-height;
+  background: $primary-color;
+  background-image: url(zeroswag.png);
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: $whitespace-base * 6;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: $whitespace-base;
+  background-color: $primary-color-dark;
+  color: $primary-color-text;
+}
+
+li a:hover {
+  background-color: $primary-color-light;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.vertical-aligned {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accent {
+  color: $accent-color;
+}
+
+.brand-container {
+  position: relative;
+  left: 64px;
+}
+
+.brand {
+  font-size: 5.5em;
+  margin: 0;
+}
+
+.brand-secondary {
+  margin-top: -.5em;
+  font-size: 1.8em;
+  color: $primary-color-light;
+}
+
+.logo {
+  position: relative;
+  top: 40%;
+  z-index: -1;
+}
+
+.hvr-float {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+section.home {
+  background-color: $primary-color-text;
+  position: absolute;
+  height: 60%;
+  width: 100%;
+  top: 30%;
+  color: $primary-text-color;
+  z-index: 1;
+}
+
+section.events {
+  position: absolute;
+  width: 100%;
+  top: $navbar-height + $whitespace-base;
+  color: $primary-text-color;
+  z-index: -1;
+}
+
+.tagline {
+  font-size: 1.5em;
+  text-align: center;
+  padding: $whitespace-base *4;
+}
+
+::selection { background:$primary-color-light; color:$primary-color-text; text-shadow:none; }
+
+/* Make Bootstrap buttons non-flat */
+.btn {
+  &.btn-default { @include pretty-buttons($btn-default-color, $btn-default-bg); }
+  &.btn-primary { @include pretty-buttons($btn-primary-color, $btn-primary-bg); }
+  &.btn-success { @include pretty-buttons($btn-success-color, $btn-success-bg); }
+  &.btn-info { @include pretty-buttons($btn-info-color, $btn-info-bg); }
+  &.btn-warning { @include pretty-buttons($btn-warning-color, $btn-warning-bg); }
+  &.btn-danger { @include pretty-buttons($btn-danger-color, $btn-danger-bg); }
+  &.btn-inverse { @include pretty-buttons(white, #474949); }
+  &.btn-accent { @include pretty-buttons(white, $accent-color); }
+}
