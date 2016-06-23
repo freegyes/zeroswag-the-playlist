@@ -1,0 +1,36 @@
+.container
+  .row
+    .col-md-7
+      %h1 Mixtapes
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title Your mixtapes
+        .panel-body
+          -# = link_to 'Create Mixtape', new_mixtape_path, class: 'btn btn-accent', title: 'Create new mixtape'
+          = render 'form'
+        .list-group
+          %a.list-group-item{:href => "#"} First mixtape
+          %a.list-group-item{:href => "#"} Second mixtape
+          %a.list-group-item{:href => "#"} Third mixtape
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title Mixtapes you've contributed to
+        .panel-body
+        .list-group
+          %a.list-group-item{:href => "#"} First mixtape
+          %a.list-group-item{:href => "#"} Second mixtape
+          %a.list-group-item{:href => "#"} Third mixtape
+    .col-md-5
+      .card.hovercard
+        .cardheader
+          = current_user.name
+        .avatar
+          = image_tag current_user.image_url, alt: current_user.name
+        .info
+          .title
+          .desc
+            %span.label.label-primary 42
+            mixtapes hosted
+          .desc
+            %span.label.label-primary 143
+            contributions

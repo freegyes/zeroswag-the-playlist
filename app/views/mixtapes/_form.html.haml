@@ -1,0 +1,7 @@
+= form_for @mixtape, html: { class: 'form' } do |f|
+  .form-group
+    = f.label :name, 'Create new mixtape'
+    .input-group
+      = f.text_field :name, value: generate_random_name, class: 'form-control'
+      %span.input-group-btn
+        = f.button 'Create', type: :submit, class: 'btn btn-accent'

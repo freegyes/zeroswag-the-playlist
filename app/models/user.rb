@@ -3,6 +3,10 @@ require 'rspotify'
 class User < ActiveRecord::Base
   devise :database_authenticatable
 
+  has_many :contributions
+  has_many :mixtapes, through: :contributions
+  has_many :owned_mixtapes, class_name: 'Mixtape'
+
   def spotify_user
     RSpotify::User.new(JSON.parse(spotify_hash))
   end

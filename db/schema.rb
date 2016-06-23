@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621200614) do
+ActiveRecord::Schema.define(version: 20160623200802) do
 
-  create_table "events", force: :cascade do |t|
+  create_table "contributions", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "mixtape_id"
+  end
+
+  create_table "mixtapes", force: :cascade do |t|
     t.string   "name"
-    t.integer  "user_id"
+    t.integer  "owner_id"
     t.string   "playlist_id"
     t.integer  "settings_id"
     t.datetime "created_at",  null: false
