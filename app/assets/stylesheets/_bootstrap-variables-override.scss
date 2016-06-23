@@ -7,7 +7,7 @@ $gray-base:                       $secondary-text-color;
 $font-family-sans-serif:          "Noto Sans", Helvetica, Arial, sans-serif;
 $font-family-serif:               "Noto Serif", "Times New Roman", Times, serif;
 
-$text-color:                      $primary-color-text;
+// $text-color:                      $primary-color-text;
 
 $headings-font-family:            $font-family-serif;
 
@@ -26,3 +26,6 @@ $list-group-active-color:         $primary-color-text;
 $list-group-active-bg:            $primary-color;
 $list-group-active-border:        $list-group-active-bg;
 $list-group-active-text-color:    lighten($list-group-active-bg, 40%);
+
+$input-color:                     $secondary-text-color;
+$text-muted:                      $gray-base;
