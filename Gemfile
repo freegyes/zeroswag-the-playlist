@@ -31,6 +31,19 @@ gem 'formtastic-bootstrap'
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'rspotify', github: 'adamgyulavari/rspotify'
 
+gem 'unicorn'
+
+# Use Capistrano for deployment
+gem 'capistrano'
+# rails specific capistrano funcitons
+gem 'capistrano-rails'
+# integrate bundler with capistrano
+gem 'capistrano-bundler'
+# if you are using RBENV
+gem 'capistrano-rbenv'
+gem 'capistrano-rails-console'
+gem 'capistrano-cookbook', require: false, group: :development
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
