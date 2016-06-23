@@ -27,6 +27,7 @@ gem 'haml'
 
 gem 'devise'
 gem 'faker'
+gem 'friendly_id'
 gem 'formtastic-bootstrap'
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'rspotify', github: 'adamgyulavari/rspotify'

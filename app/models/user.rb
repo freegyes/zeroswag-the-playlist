@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :contributions
   has_many :mixtapes, through: :contributions
-  has_many :owned_mixtapes, class_name: 'Mixtape'
+  has_many :owned_mixtapes, class_name: 'Mixtape', foreign_key: 'owner_id'
 
   def spotify_user
     RSpotify::User.new(JSON.parse(spotify_hash))

@@ -9,17 +9,13 @@
           -# = link_to 'Create Mixtape', new_mixtape_path, class: 'btn btn-accent', title: 'Create new mixtape'
           = render 'form'
         .list-group
-          %a.list-group-item{:href => "#"} First mixtape
-          %a.list-group-item{:href => "#"} Second mixtape
-          %a.list-group-item{:href => "#"} Third mixtape
+          = render @owned_mixtapes
       .panel.panel-default
         .panel-heading
           %h3.panel-title Mixtapes you've contributed to
         .panel-body
         .list-group
-          %a.list-group-item{:href => "#"} First mixtape
-          %a.list-group-item{:href => "#"} Second mixtape
-          %a.list-group-item{:href => "#"} Third mixtape
+          = render @mixtapes
     .col-md-5
       .card.hovercard
         .cardheader
