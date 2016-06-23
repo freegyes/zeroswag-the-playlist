@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
-      user.name = auth.info.display_name   # assuming the user model has a name
-      user.image_url = auth.info.image # assuming the user model has an image
+      user.name = auth.info.display_name
+      user.image_url = auth.info.images.first.url
       user.spotify_hash = auth.to_json
     end
   end

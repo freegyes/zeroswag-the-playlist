@@ -21,10 +21,10 @@
           %a.list-group-item{:href => "#"} Third event
     .col-md-5
       .card.hovercard
-        .cardheader 
-          current_user.name
+        .cardheader
+          = current_user.name
         .avatar
-          %img{:alt => "profile picture", :src => "http://lorempixel.com/100/100/people/8/"}
+          = image_tag current_user.image_url, alt: current_user.name
         .info
           .title
           .desc
