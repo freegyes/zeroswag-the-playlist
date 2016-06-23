@@ -8,7 +8,7 @@
       %hr
       .row
         .col-md-12.text-center
-          = link_to '#', class: 'btn btn-accent', role: 'button' do
+          = link_to contribute_mixtape_path(@mixtape), class: 'btn btn-accent', role: 'button' do
             %i.fa.fa-lg.fa-spotify{"aria-hidden" => "true"}
             Contribute to this mixtape
       %hr
@@ -17,4 +17,3 @@
           = image_tag current_user.image_url, alt: current_user.name, class: 'img-responsive img-rounded'
     .col-md-5
       %iframe{:allowtransparency => "true", :frameborder => "0", :height => "420", :src => "https://embed.spotify.com/?uri=spotify:user:#{@mixtape.owner.uid}:playlist:#{@mixtape.playlist_id}&theme=white", :width => "100%"}
-

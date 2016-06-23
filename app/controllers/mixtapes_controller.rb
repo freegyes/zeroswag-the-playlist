@@ -1,6 +1,6 @@
 class MixtapesController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   def index
     @owned_mixtapes = current_user.owned_mixtapes
@@ -21,6 +21,12 @@ class MixtapesController < ApplicationController
     else
       redirect_to mixtapes_path, alert: 'Could not create mixtape: ' + mixtape.errors.full_messages
     end
+  end
+
+  def contribute
+    mixtape = Mixtape.friendly.find(params[:id])
+    mixtape.contributions.create(user: current_user)
+    redirect_to mixtape
   end
 
   private

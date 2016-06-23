@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   get '/auth/spotify/callback', to: 'users/omniauth_callbacks#spotify'
 
-  resources :mixtapes, only: [:index, :show,  :create]
+  resources :mixtapes, only: [:index, :show,  :create] do
+    get :contribute, on: :member
+  end
 
   get 'console', to: 'home#console' if Rails.env.development?
 
