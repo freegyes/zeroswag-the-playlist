@@ -1,1 +1,20 @@
-%h2= @mixtape.name
+.container
+  .row
+    .col-md-7
+      %h1
+        = @mixtape.name
+        %span.badge
+          12
+      %hr
+      .row
+        .col-md-12.text-center
+          = link_to '#', class: 'btn btn-accent', role: 'button' do
+            %i.fa.fa-lg.fa-spotify{"aria-hidden" => "true"}
+            Contribute to this mixtape
+      %hr
+      .row
+        .col-xs-4.col-sm-2
+          = image_tag current_user.image_url, alt: current_user.name, class: 'img-responsive img-rounded'
+    .col-md-5
+      %iframe{:allowtransparency => "true", :frameborder => "0", :height => "420", :src => "https://embed.spotify.com/?uri=spotify:user:#{@mixtape.owner.uid}:playlist:#{@mixtape.playlist_id}&theme=white", :width => "100%"}
+
