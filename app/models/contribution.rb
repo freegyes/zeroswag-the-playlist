@@ -13,6 +13,6 @@ class Contribution < ActiveRecord::Base
   end
 
   def follow_playlist
-    user.spotify_user.follow!(mixtape.spotify_playlist)
+    user.spotify_user.follow(mixtape.spotify_playlist)
   end
 end

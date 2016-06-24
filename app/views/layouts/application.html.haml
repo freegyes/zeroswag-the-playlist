@@ -8,6 +8,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     = favicon_link_tag
+    %meta{:content => "http://mixtape.mobil.ninja", :property => "og:url"}/
+    %meta{:content => "website", :property => "og:type"}/
+    %meta{:content => "Automatic Spotify Playlists", :property => "og:title"}/
+    %meta{:content => "Host an event and generate playlists automatically based on the taste of your participants.", :property => "og:description"}/
+    %meta{:content => asset_url("tile.jpg"), :property => "og:image"}/
+  #swag.hidden
   %body
     = render 'header'
     %section{class: controller_name}

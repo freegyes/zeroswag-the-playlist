@@ -36,19 +36,16 @@ header {
   height: 30%;
   width: 100%;
   background: $primary-color;
-  // background-image: url(zeroswag.png);
-  // background-repeat: no-repeat;
-  // background-position: 70% 175%;
   z-index: -2;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   background: $primary-color-dark;
   color: $primary-color-light;
   left: 0;
   bottom: 0;
-  height: 5%;
+  height: $footer-height;
   width: 100%;
 }
 
@@ -111,6 +108,7 @@ a:hover {
 .brand {
   font-size: 5.5em;
   margin: 0;
+  color: $primary-color-text;
 }
 
 .brand-secondary {
@@ -168,6 +166,15 @@ section.mixtapes {
   font-size: 1.5em;
   text-align: center;
   padding: $whitespace-base *4;
+}
+
+#swag {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+
+  min-width: 100%;
+  min-height: 100%;
 }
 
 ::selection { background:$primary-color-light; color:$primary-color-text; text-shadow:none; }
