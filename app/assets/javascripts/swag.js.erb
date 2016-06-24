@@ -3,6 +3,7 @@ if ( window.addEventListener ) {
   window.addEventListener("keydown", function(e){
     kkeys.push( e.keyCode );
     if ( kkeys.toString().indexOf( konami ) >= 0 ) {
+      $('#swag').removeClass('hidden');
       $('body').html('<img id="swag" src="<%= asset_path('mantis.jpg') %>">');
     }
   }, true);
