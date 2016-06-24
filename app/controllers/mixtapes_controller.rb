@@ -26,6 +26,7 @@ class MixtapesController < ApplicationController
   def contribute
     mixtape = Mixtape.friendly.find(params[:id])
     mixtape.contributions.create(user: current_user) unless current_user.contributes?(mixtape)
+    mixtape.save
     redirect_to mixtape
   end
 
