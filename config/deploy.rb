@@ -3,7 +3,7 @@ lock '3.5.0'
 
 set :application, 'mixtape'
 set :deploy_user, 'deployer'
-set :repo_url, 'git@github.com:freegyes/zeroswag.git'
+set :repo_url, 'git@github.com:freegyes/zeroswag-the-playlist.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -73,24 +73,12 @@ set(
 set :assets_roles, [:app]
 
 namespace :deploy do
-  # make sure we're deploying what we think we're deploying
-  before :deploy, "deploy:check_revision"
-  # only allow a deploy with passing tests to deployed
-  before :deploy, "deploy:run_tests"
-  # compile assets locally then rsync
-  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
-  after :finishing, 'deploy:cleanup'
-
-  # remove the default nginx configuration as it will tend
-  # to conflict with our configs.
-  before 'deploy:setup_config', 'nginx:remove_default_vhost'
-
-  # reload nginx to it will pick up any modified vhosts from
-  # setup_config
-  after 'deploy:setup_config', 'nginx:reload'
-
-
-  # As of Capistrano 3.1, the `deploy:restart` task is not called
-  # automatically.
-  after 'deploy:publishing', 'deploy:restart'
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
+    end
+  end
 end
