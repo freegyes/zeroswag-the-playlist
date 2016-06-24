@@ -22,6 +22,6 @@ class User < ActiveRecord::Base
   end
 
   def contributes?(mixtape)
-    Contribution.where(user: self, mixtape: mixtape)
+    Contribution.where(user: self, mixtape: mixtape).first
   end
 end

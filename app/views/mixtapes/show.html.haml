@@ -5,7 +5,7 @@
         = @mixtape.name
         %span.badge
           = @mixtape.contributions.count
-      - unless current_user.contributes?(@mixtape)
+      - unless user_signed_in? && current_user.contributes?(@mixtape)
         %hr
         .row
           .col-md-12.text-center
