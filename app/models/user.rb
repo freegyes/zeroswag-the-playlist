@@ -20,4 +20,8 @@ class User < ActiveRecord::Base
       user.spotify_hash = auth.to_json
     end
   end
+
+  def contributes?(mixtape)
+    Contribution.where(user: self, mixtape: mixtape).first
+  end
 end

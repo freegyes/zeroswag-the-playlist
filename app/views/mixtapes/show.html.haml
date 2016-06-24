@@ -5,12 +5,13 @@
         = @mixtape.name
         %span.badge
           = @mixtape.contributions.count
-      %hr
-      .row
-        .col-md-12.text-center
-          = link_to contribute_mixtape_path(@mixtape), class: 'btn btn-accent', role: 'button' do
-            %i.fa.fa-lg.fa-spotify{"aria-hidden" => "true"}
-            Contribute to this mixtape
+      - unless user_signed_in? && current_user.contributes?(@mixtape)
+        %hr
+        .row
+          .col-md-12.text-center
+            = link_to contribute_mixtape_path(@mixtape), class: 'btn btn-accent', role: 'button' do
+              %i.fa.fa-lg.fa-spotify{"aria-hidden" => "true"}
+              Contribute to this mixtape
       %hr
       .row
         - @mixtape.contributions.each do | contribution |
