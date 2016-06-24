@@ -22,5 +22,6 @@
       %p.text-center
         made by
         %a{:href => "mailto:zeroswag@mobil.ninja", :title => "Send an email to zeroswag-the-team"} zeroswag-the-team
-        ||
-        = link_to 'log out', destroy_user_session_path, method: :delete
+        - if user_signed_in?
+          ||
+          = link_to 'log out', destroy_user_session_path, method: :delete
