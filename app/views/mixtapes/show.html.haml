@@ -15,7 +15,6 @@
       %hr
       .row
         - @mixtape.contributions.each do | contribution |
-          .col-xs-4.col-sm-2
-            = image_tag contribution.user.image_url, alt: contribution.user.name, class: 'img-responsive img-rounded'
+          .profile-picture.col-xs-4.col-sm-2{:style => "background-image: url(#{contribution.user.image_url})", :alt => contribution.user.name, :title => contribution.user.name}
     .col-md-5
       %iframe{:allowtransparency => "true", :frameborder => "0", :height => "420", :src => "https://embed.spotify.com/?uri=spotify:user:#{@mixtape.owner.uid}:playlist:#{@mixtape.playlist_id}&theme=white", :width => "100%"}

@@ -177,6 +177,15 @@ section.mixtapes {
   min-height: 100%;
 }
 
+.profile-picture {
+  background-size: cover;
+  height: $whitespace-base*3;
+  width: $whitespace-base*3;
+  margin-left: $whitespace-base/2;
+  margin-bottom: $whitespace-base/2;
+  border-radius: 50%;
+}
+
 ::selection { background:$primary-color-light; color:$primary-color-text; text-shadow:none; }
 
 /* Make Bootstrap buttons non-flat */
