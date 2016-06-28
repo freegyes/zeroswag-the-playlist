@@ -3,7 +3,7 @@ lock '3.5.0'
 
 set :application, 'mixtape'
 set :deploy_user, 'deployer'
-set :repo_url, 'git@github.com:freegyes/zeroswag-the-playlist.git'
+set :repo_url, 'git@github.com:zeroswag/zeroswag-the-playlist.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
