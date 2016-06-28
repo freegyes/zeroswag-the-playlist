@@ -30,3 +30,10 @@
           .desc
             %span.label.label-primary= @mixtapes.count
             contributions
+%script(type="text/javascript")
+  $(function() {
+  $('button').click(function() {
+  $('button').button('loading...');
+  });
+  });
+  
