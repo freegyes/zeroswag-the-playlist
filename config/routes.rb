@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/auth/spotify/callback', to: 'users/omniauth_callbacks#spotify'
 
-  resources :mixtapes, only: [:index, :show,  :create] do
+  resources :mixtapes, only: [:index, :show, :create, :destroy] do
     get :contribute, on: :member
   end
 

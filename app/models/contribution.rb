@@ -8,7 +8,10 @@ class Contribution < ActiveRecord::Base
 
   def set_tracks
     RSpotify::authenticate(Rails.application.secrets.spotify_client_id, Rails.application.secrets.spotify_client_secret)
-    user.spotify_user.top_tracks(time_range: 'medium_term').each do |track|
+    top_tracks = user.spotify_user.top_tracks(time_range: 'medium_term')
+    top_tracks = user.spotify_user.top_tracks(time_range: 'short_term') if top_tracks.empty?
+    top_tracks = user.spotify_user.top_tracks(time_range: 'long_term') if top_tracks.empty?
+    top_tracks.each do |track|
       tracks.create(spotify_id: track.id)
     end
   end

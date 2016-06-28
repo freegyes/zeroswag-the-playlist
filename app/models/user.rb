@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
     RSpotify::User.new(JSON.parse(spotify_hash))
   end
 
+  def avatar_url
+    image_url || Faker::Avatar.image
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -24,4 +28,5 @@ class User < ActiveRecord::Base
   def contributes?(mixtape)
     Contribution.where(user: self, mixtape: mixtape).first
   end
+
 end

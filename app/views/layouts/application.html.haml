@@ -16,6 +16,8 @@
   #swag.hidden
   %body
     = render 'header'
+    - flash.each do |key, value|
+      = content_tag :div, value, class: "flash #{key}"
     %section{class: controller_name}
       = yield
     %footer.vertical-aligned

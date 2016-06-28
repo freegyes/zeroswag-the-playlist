@@ -4,7 +4,7 @@
     .input-group
       = f.text_field :name, value: generate_random_name, class: 'form-control'
       %span.input-group-btn
-        = f.button 'Create!', type: :submit, class: 'btn btn-accent'
+        = f.button 'Create!', type: :submit, data: { disable_with: 'Loading...' }, class: 'btn btn-accent'
     %p.text-muted
       %small 
         Great mixtape names are short and memorable. Need inspiration? How about: 

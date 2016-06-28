@@ -3,8 +3,8 @@ class MixtapesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    @owned_mixtapes = current_user.owned_mixtapes
-    @mixtapes = current_user.mixtapes - current_user.owned_mixtapes
+    @owned_mixtapes = current_user.owned_mixtapes.order('created_at DESC')
+    @mixtapes = current_user.mixtapes.order('created_at DESC') - current_user.owned_mixtapes.order('created_at DESC')
     @mixtape = Mixtape.new
   end
 
@@ -22,6 +22,12 @@ class MixtapesController < ApplicationController
       redirect_to mixtapes_path, alert: 'Could not create mixtape: ' + mixtape.errors.full_messages
     end
   end
+
+  def destroy
+    current_user.mixtapes.friendly.find(params[:id]).destroy
+    redirect_to mixtapes_path, notice: 'Successfully deleted mixtape locally.'
+  end
+
 
   def contribute
     mixtape = Mixtape.friendly.find(params[:id])
