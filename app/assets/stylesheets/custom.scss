@@ -58,7 +58,7 @@ nav {
   width: 100%;
   height: $navbar-height;
   background: $primary-color;
-  background-image: url(zeroswag.png);
+  background-image: image-url("zeroswag.png");
   background-repeat: no-repeat;
   background-position: 100% 0%;
 }
@@ -152,6 +152,7 @@ section.home {
   top: 30%;
   color: $primary-text-color;
   z-index: 1;
+  margin-bottom: $footer-height;
 }
 
 section.mixtapes {
@@ -160,6 +161,7 @@ section.mixtapes {
   top: $navbar-height + $whitespace-base;
   color: $primary-text-color;
   z-index: -1;
+  margin-bottom: $footer-height;
 }
 
 .tagline {
