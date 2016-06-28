@@ -30,6 +30,7 @@ class Mixtape < ActiveRecord::Base
       track_ids << track.spotify_id
     end
     RSpotify::authenticate(Rails.application.secrets.spotify_client_id, Rails.application.secrets.spotify_client_secret)
+    owner.spotify_user
     spotify_playlist.replace_tracks!(RSpotify::Track.find(track_ids.uniq.shuffle))
   end
 
