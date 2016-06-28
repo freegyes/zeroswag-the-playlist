@@ -33,7 +33,7 @@ class Mixtape < ActiveRecord::Base
     owner.spotify_user
     track_ids.uniq.shuffle.in_groups_of(20, false).each_with_index do |new_tracks, index|
       command = index == 0 ? 'replace_tracks!' : 'add_tracks!'
-      spotify_playlist.send(command, RSpotify::Track.find(new_trackss))
+      spotify_playlist.send(command, RSpotify::Track.find(new_tracks))
     end
   end
 
