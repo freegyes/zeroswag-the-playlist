@@ -31,7 +31,10 @@ class Mixtape < ActiveRecord::Base
     end
     RSpotify::authenticate(Rails.application.secrets.spotify_client_id, Rails.application.secrets.spotify_client_secret)
     owner.spotify_user
-    spotify_playlist.replace_tracks!(RSpotify::Track.find(track_ids.uniq.shuffle))
+    track_ids.uniq.shuffle.in_groups_of(20, false).each_with_index do |new_tracks, index|
+      command = index == 0 ? 'replace_tracks!' : 'add_tracks!'
+      spotify_playlist.send(command, RSpotify::Track.find(new_trackss))
+    end
   end
 
   def spotify_playlist
