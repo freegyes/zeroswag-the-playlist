@@ -3,6 +3,8 @@ require 'rspotify'
 class User < ActiveRecord::Base
   devise :database_authenticatable
 
+  dragonfly_accessor :image
+
   has_many :contributions
   has_many :mixtapes, through: :contributions
   has_many :owned_mixtapes, class_name: 'Mixtape', foreign_key: 'owner_id'
@@ -12,7 +14,7 @@ class User < ActiveRecord::Base
   end
 
   def avatar_url
-    image_url || Faker::Avatar.image
+    image.try(:url) || Faker::Avatar.image
   end
 
   def self.from_omniauth(auth)

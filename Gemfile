@@ -30,6 +30,7 @@ gem 'friendly_id'
 gem 'formtastic-bootstrap'
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'rspotify', github: 'adamgyulavari/rspotify'
+gem 'dragonfly', '~> 1.1.3'
 
 gem 'unicorn'
 
