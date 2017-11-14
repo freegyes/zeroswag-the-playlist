@@ -2,7 +2,7 @@
   .form-group
     = f.label :name, 'Create new mixtape:'
     .input-group
-      = f.text_field :name, value: generate_random_name, class: 'form-control mixtape-form', autofocus: true
+      = f.text_field :name, value: generate_random_name, class: 'form-control mixtape-form'
       %span.input-group-btn
         = f.button 'Create!', type: :submit, data: { disable_with: 'Loading...' }, class: 'btn btn-accent'
     %p.text-muted

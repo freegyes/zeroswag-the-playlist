@@ -20,7 +20,9 @@ var pageLoadScripts = function() {
   $('.flash').addClass('show');
   setTimeout(function(){ $('.flash').removeClass('show') }, 5000);
 
-  $('.mixtape-form').select();
+  $('.mixtape-form').on('focus', function() {
+    $(this).select();
+  })
 
 }
 
