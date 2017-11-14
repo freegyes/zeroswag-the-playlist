@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.display_name
-      user.image_url = auth.info.images.first.try(:url)
       user.spotify_hash = auth.to_json
     end
   end
