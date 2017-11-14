@@ -15,3 +15,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var pageLoadScripts = function() {
+  $('.flash').addClass('show');
+  setTimeout(function(){ $('.flash').removeClass('show') }, 5000);
+
+  $('.mixtape-form').select();
+
+}
+
+$(document).on('page:load', pageLoadScripts);
+$(document).on('ready', pageLoadScripts);

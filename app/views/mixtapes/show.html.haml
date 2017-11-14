@@ -1,3 +1,8 @@
+= content_for :meta do
+  %meta{:content => "Contribute to ||#{@mixtape.name}||, a mixtape by #{@mixtape.owner.name}.", :property => "og:title"}/
+  %meta{:content => "Add your top tracks from Spotify with a click of a button.", :property => "og:description"}/
+
+
 .container
   .row
     .col-md-7
@@ -9,7 +14,7 @@
         %hr
         .row
           .col-md-12.text-center
-            = link_to contribute_mixtape_path(@mixtape), class: 'btn btn-accent', role: 'button' do
+            = link_to contribute_mixtape_path(@mixtape), class: 'btn btn-accent', data: { disable_with: 'Loading...' }, role: 'button' do
               %i.fa.fa-lg.fa-spotify{"aria-hidden" => "true"}
               Contribute to this mixtape
       %hr
@@ -19,4 +24,4 @@
     .col-md-5
       %iframe{:allowtransparency => "true", :frameborder => "0", :height => "420", :src => "https://embed.spotify.com/?uri=spotify:user:#{@mixtape.owner.uid}:playlist:#{@mixtape.playlist_id}&theme=white", :width => "100%"}
       - if current_user == @mixtape.owner
-        = link_to 'Delete this mixtape forever', mixtape_path(@mixtape), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs center-block'
+        = link_to 'Delete this mixtape forever', mixtape_path(@mixtape), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger center-block'

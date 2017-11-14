@@ -2,7 +2,7 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "UTF-8"}/
-    %title zeroswag-the-playlist
+    %title mixtape-collective-playlists
     %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", :rel => "stylesheet"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -10,9 +10,8 @@
     = favicon_link_tag
     %meta{:content => "http://mixtape.mobil.ninja", :property => "og:url"}/
     %meta{:content => "website", :property => "og:type"}/
-    %meta{:content => "Automatic Spotify Playlists", :property => "og:title"}/
-    %meta{:content => "Host an event and generate playlists automatically based on the taste of your participants.", :property => "og:description"}/
-    %meta{:content => asset_url("tile.jpg"), :property => "og:image"}/
+    = yield :meta
+    %meta{:content => "http://mixtape.mobil.ninja/zeroswag.png", :property => "og:image"}/
   #swag.hidden
   %body
     = render 'header'

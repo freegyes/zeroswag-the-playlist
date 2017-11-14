@@ -1,3 +1,8 @@
+= content_for :meta do
+  %meta{:content => "Mixtape - Collective Playlists", :property => "og:title"}/
+  %meta{:content => "Enjoy your friends' combined Top Tracks Mixtape as a Spotify playlist.", :property => "og:description"}/
+
+
 .container
   .row
     .col-md-7
@@ -10,12 +15,13 @@
           = render 'form'
         .list-group
           = render @owned_mixtapes
-      .panel.panel-default
-        .panel-heading
-          %h3.panel-title Mixtapes you've contributed to
-        .panel-body
-        .list-group
-          = render @mixtapes
+      - if @mixtapes.any?
+        .panel.panel-default
+          .panel-heading
+            %h3.panel-title Mixtapes you've contributed to
+          .panel-body
+          .list-group
+            = render @mixtapes
     .col-md-5
       .card.hovercard
         .cardheader

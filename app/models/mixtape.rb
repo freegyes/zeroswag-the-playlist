@@ -18,7 +18,7 @@ class Mixtape < ActiveRecord::Base
   end
 
   def create_playlist
-    playlist = owner.spotify_user.create_playlist!(name + ' a zeroswag mixtape')
+    playlist = owner.spotify_user.create_playlist!(name + ' by mixtape.mobil.ninja')
     self.playlist_id = playlist.id
     contributions.create(user: owner)
     save

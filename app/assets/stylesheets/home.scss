@@ -1,3 +1,30 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.how-to {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tagline {
+  font-size: $font-size-lg;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+}
+
+.tagline .counter {
+  display: none;
+  padding-right: $whitespace-base / 2;
+  color: $primary-color;
+  font-weight: 400;
+}
+
+.tagline .fa {
+  padding-right: $whitespace-base / 2;
+  color: $accent-color;
+}

@@ -1,5 +1,5 @@
 /* Imports */
-@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Noto+Sans&subset=latin);
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Noto+Sans:100&subset=latin);
 
 $primary-color-dark:   #0097A7;
 $primary-color:        #00BCD4;
@@ -14,6 +14,8 @@ $primary-background:   #FAFAFA;
 @import "bootstrap";
 @import "custom-variables";
 @import "custom-mixins";
+@import "home";
+@import "flash";
 
 @import "events";
 
@@ -70,18 +72,18 @@ nav ul {
   width: $whitespace-base * 6;
 }
 
-li {
+nav li {
   float: left;
 }
 
-li a {
+nav li a {
   display: block;
   padding: $whitespace-base;
   background-color: $primary-color-dark;
   color: $primary-color-text;
 }
 
-li a:hover {
+nav li a:hover {
   background-color: $primary-color-light;
   text-decoration: none;
 }
@@ -164,12 +166,6 @@ section.mixtapes {
   margin-bottom: $footer-height;
 }
 
-.tagline {
-  font-size: 1.5em;
-  text-align: center;
-  padding: $whitespace-base *4;
-}
-
 #swag {
   position: fixed; 
   top: 0; 
@@ -189,7 +185,11 @@ section.mixtapes {
   border-radius: 50%;
 }
 
-::selection { background:$primary-color-light; color:$primary-color-text; text-shadow:none; }
+::selection { 
+  background:$primary-color-light; 
+  color:$secondary-text-color; 
+  text-shadow:none; 
+}
 
 /* Make Bootstrap buttons non-flat */
 .btn {

@@ -1,9 +1,22 @@
-%div
-  %p.tagline
-    Host an event and
-    %span.accent generate playlists automatically
-    %br/
-    based on the taste of your participants.
+= content_for :meta do
+  %meta{:content => "Mixtape - Collective Playlists", :property => "og:title"}/
+  %meta{:content => "Enjoy your friends' combined Top Tracks Mixtape as a Spotify playlist.", :property => "og:description"}/
+
+
+%div.how-to
+  .tagline-wrapper
+    %p.tagline
+      %span.counter 1
+      %i.fa.fa-2x.fa-magic{"aria-hidden" => "true"}
+      Create a mixtape.
+    %p.tagline
+      %span.counter 2
+      %i.fa.fa-2x.fa-share-square-o{"aria-hidden" => "true"}
+      Share the link of the mixtape. Any Spotify user can contribute.
+    %p.tagline
+      %span.counter 3
+      %i.fa.fa-2x.fa-music{"aria-hidden" => "true"}
+      Enjoy your combined Top Tracks Mixtape as a Spotify playlist.
   %p.text-center
     = link_to '/auth/spotify', class: 'btn btn-accent btn-lg', role: 'button' do
       Log in with
